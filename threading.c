@@ -1,28 +1,34 @@
+// Define header files
 #include <stdio.h>
 #include <pthread.h>
 #include <math.h>
 
+//Define max values
 #define FIB_NUM 10
 #define SQUARES_NUM 10
 #define SORT_NUM_SIZE 5
 
-typedef struct {
+// Define struct for Fibonacci Sequence
+typedef struct { 
     pthread_t thread;
     int num;
     int fib_sequence[FIB_NUM];
 } Fib;
 
+// Define struct for Squares
 typedef struct {
     pthread_t thread;
     int num;
     int squares[SQUARES_NUM];
 } Squares;
 
+// Define struct for Sorting Numbers 
 typedef struct {
     pthread_t thread;
     int numbers[SORT_NUM_SIZE];
 } SortNum;
 
+// Define function for every thread
 void* runFib(void* arg);
 void* runSquares(void* arg);
 void* runSortNum(void* arg);
